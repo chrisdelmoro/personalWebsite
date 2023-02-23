@@ -1,0 +1,17 @@
+{% extends 'main.html' %}
+
+{% block content %}
+
+<h1 align="center">Recent Posts</h1>
+
+<div align="center">
+	{% for post in posts %}
+	<a href="{% url 'post_detail' post.slug %}">
+		{{ post.createdAt | date:'M-d-Y'}}<br>
+		{{ post.title }}<br>
+		{{ post.intro }}<br><br>
+	</a>
+	{% endfor %}
+</div>
+
+{% endblock content %}

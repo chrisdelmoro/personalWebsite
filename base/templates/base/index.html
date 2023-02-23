@@ -1,0 +1,29 @@
+{% extends 'main.html' %}
+
+{% block content %}
+
+<h1 align="center">Chris's Webpage</h1>
+
+<div align="center">
+	Hi! I'm Christian and this is my personal space on the internet!
+	I created this website as parte of my personal journey learning Python,
+	and as a place where I can publish tutorials as a form os reinforcing
+	what I learn.
+	<br>
+	Texts here are not necessarily limited to computer science and programming topics,
+	as I'm interested in many other things.
+</div>
+
+
+<h1 align="center">Recent Posts</h1>
+
+<div align="center">
+	{% for post in posts %}
+		<a href="{% url 'post_detail' post.slug %}">
+			{{ post.title }} | {{ post.createdAt | date:'M-d-Y'}}
+		</a>
+		<br>
+	{% endfor %}
+</div>
+
+{% endblock content %}
