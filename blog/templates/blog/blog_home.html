@@ -1,0 +1,20 @@
+{% extends 'main.html' %}
+
+{% block content %}
+
+<h1 align="center">Recent Posts</h1>
+
+<div align="center">
+	{% for post in posts %}
+	<a href="{% url 'post_detail' post.category.slug post.slug %}">
+		{{ post.created_at | date:'M-d-Y'}}<br>
+		{{ post.title }}<br>
+		{{ post.intro }}<br>
+	</a>
+	<a href="{% url 'category_detail' post.category.slug %}">
+		Category: {{ post.category }}<br><br>
+	</a>
+	{% endfor %}
+</div>
+
+{% endblock content %}
