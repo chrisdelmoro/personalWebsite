@@ -2,6 +2,17 @@
 
 {% block content %}
 
+<h1 align="center">Topics</h1>
+
+<div align="center">
+	{% for category in categories %}
+	<a href="{% url 'category_detail' category.slug %}">
+		{{ category.title }}<br>
+	</a>
+	{% endfor %}
+</div>
+
+
 <h1 align="center">Recent Posts</h1>
 
 <div align="center">

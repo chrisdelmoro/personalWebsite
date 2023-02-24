@@ -2,16 +2,18 @@ from django.shortcuts import render, get_object_or_404
 from .models import Post, Category
 
 def blog(request):
-	posts = Post.objects.all()
-	context = {'posts':posts}
-	return render(request, 'blog/blog_home.html', context)
+	posts = Post.objects.filter(status=Post.ACTIVE)
+	category = Category.objects.all()
+	context = {'posts':posts, 'categories':category}
+	return render(request, 'blog/index.html', context)
 
 def detail(request, category_slug, slug):
-	post = get_object_or_404(Post, slug=slug)
+	post = get_object_or_404(Post, slug=slug, status=Post.ACTIVE)
 	context = {'post':post}
 	return render(request, 'blog/detail.html', context)
 
 def category(request, slug):
 	category = get_object_or_404(Category, slug=slug)
-	context = {'category':category}
+	posts = category.posts.filter(status=Post.ACTIVE)
+	context = {'category':category, 'posts':posts}
 	return render(request, 'blog/category.html', context)

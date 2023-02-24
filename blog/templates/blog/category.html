@@ -3,7 +3,7 @@
 {% block content %}
 
 <div align="center">
-	{% for post in category.posts.all %}
+	{% for post in posts %}
 	<a href="{% url 'post_detail' post.category.slug post.slug %}">
 		{{ post.created_at | date:'M-d-Y'}}<br>
 		{{ post.title }}<br>
@@ -12,6 +12,10 @@
 	<a href="{% url 'category_detail' post.category.slug %}">
 		Category: {{ post.category }}<br><br>
 	</a>
+	{% empty %}
+		<div>
+			<p>There is no posts in this category...</p>
+		</div>
 	{% endfor %}
 </div>
 
