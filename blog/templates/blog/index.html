@@ -2,8 +2,16 @@
 
 {% block content %}
 
-<h1 align="center">Topics</h1>
 
+<h1 align="center">Search</h1>
+<div align="center">
+	<form method="get" action="{% url 'search' %}">
+		<input type="text" placeholder="Search" name="query">
+	</form>
+</div>
+
+
+<h1 align="center">Topics</h1>
 <div align="center">
 	{% for category in categories %}
 	<a href="{% url 'category_detail' category.slug %}">
@@ -14,7 +22,6 @@
 
 
 <h1 align="center">Recent Posts</h1>
-
 <div align="center">
 	{% for post in posts %}
 	<a href="{% url 'post_detail' post.category.slug post.slug %}">
