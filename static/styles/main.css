@@ -1,0 +1,46 @@
+body {
+	font-family: Arial, Helvetica, sans-serif;
+	background-color:rgb(34, 43, 46);
+	color: white;
+}
+
+.navbar {
+	background-color: rgb(20, 26, 27);
+	padding-top: 20px;
+	padding-bottom: 20px;
+}
+
+.navbar-link {
+	color: white;
+	text-decoration: none;
+	padding-top: 20px;
+	padding-bottom: 20px;
+	padding-left: 15px;
+	padding-right: 15px;
+}
+
+.navbar-link:hover {
+	color:rgb(20, 26, 27);
+	background-color: rgb(22, 160, 133);
+	border-bottom-width: 2px;
+    border-bottom-style: solid;
+    border-bottom-color: white;
+}
+
+.navbar-link.current {
+	border-bottom: 2px solid #38d9a9;
+}
+
+.simple-link {
+	color: lightblue;
+	text-decoration: none;
+}
+
+.simple-link:hover {
+	color:rgb(22, 160, 133);
+	text-decoration: underline;
+}
+
+.footer {
+	background-color: #141a1b;
+}
