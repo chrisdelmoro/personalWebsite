@@ -1,13 +1,18 @@
 body {
 	font-family: Arial, Helvetica, sans-serif;
 	background-color:rgb(34, 43, 46);
-	color: white;
+	color: rgb(157, 170, 168);
+	margin: 0;
 }
 
 .navbar {
 	background-color: rgb(20, 26, 27);
 	padding-top: 20px;
 	padding-bottom: 20px;
+	text-align: center;
+	/* border-bottom-width: 1px;
+	border-bottom-style: solid;
+	border-bottom-color: rgb(157, 170, 168); */
 }
 
 .navbar-link {
@@ -43,4 +48,22 @@ body {
 
 .footer {
 	background-color: #141a1b;
+	padding-top: 20px;
+	padding-bottom: 20px;
+/* 	border-top-width: 1px;
+	border-top-style: solid;
+	border-top-color: rgb(157, 170, 168); */
+	text-align: center;
+}
+
+.footer-text {
+	color: white;
+	font-size: 15px;
+	padding-bottom: 10px;
+	margin: 0;
+}
+
+.footer-link {
+	padding-right: 2px;
+	padding-left: 2px;
 }
