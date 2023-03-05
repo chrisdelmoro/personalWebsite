@@ -60,7 +60,7 @@ body {
 	opacity: 1;
 }
 
-#blog-category {
+.blog-category {
 	background-color: #141a1b;
 	color: #9daaa8;
 	border-color: #16a085;
@@ -78,7 +78,97 @@ body {
 	transition: background-color 0.1s, color 0.1s;
 }
 
-#blog-category:hover {
+.blog-category:hover {
+	background-color: #16a085;
+	color: #141a1b;
+}
+
+.post-category {
+	background-color: #141a1b;
+	color: #9daaa8;
+	border-color: #16a085;
+	border-radius: 100px;
+	border-style: solid;
+	border-width: 2px;
+	text-decoration: none;
+	cursor: pointer;
+	padding-top: 5px;
+	padding-bottom: 5px;
+	padding-left: 5px;
+	padding-right: 5px;
+	margin-top: 2%;
+	margin-left: 2%;
+	margin-right: 2%;
+	vertical-align: top;
+	transition: background-color 0.1s, color 0.1s;
+}
+
+.post-category:hover {
+	background-color: #16a085;
+	color: #141a1b;
+}
+
+.post {
+	border-radius: 10px;
+	border-style: solid;
+	border-width: 1px;
+	border-color: #9daaa8;
+	margin-top: 15px;
+}
+
+.post-title {
+	display: block;
+	color: #9daaa8;
+	font-size: 36px;
+	text-decoration: none;
+	transition: color 0.15s;
+	margin-top: 5px;
+	margin-left: 2%;
+	margin-right: 2%;
+	margin-bottom: 5px;
+}
+
+.created_at {
+	font-size: 12px;
+	margin-top: 10px;
+	margin-bottom: 10px;
+	margin-left: 2%;
+	margin-right: 2%;
+}
+
+.post-intro {
+	font-size: 16px;
+	margin-top: 10px;
+	margin-bottom: 10px;
+	margin-left: 2%;
+	margin-right: 2%;
+}
+
+.post-title:hover {
+	color: #16a085;
+}
+
+.continue-button {
+	background-color: #9daaa8;
+	color: #141a1b;
+	border-color: #1b2224;
+	border-radius: 100px;
+	border-style: solid;
+	border-width: 2px;
+	text-decoration: none;
+	cursor: pointer;
+	padding-top: 5px;
+	padding-bottom: 5px;
+	padding-left: 5px;
+	padding-right: 5px;
+	margin-left: 2%;
+	margin-bottom: 2%;
+	vertical-align: top;
+	box-shadow: -5px 5px 10px rgba(0, 0, 0, 0.15);
+	transition: background-color 0.1s, color 0.1s;
+}
+
+.continue-button:hover {
 	background-color: #16a085;
 	color: #141a1b;
 }
@@ -99,7 +189,7 @@ body {
 	clear: both;
 }
 
-#column {
+.column {
 	display: table-cell;
 	width: 15vw;
 	background-color: #1b2224;
