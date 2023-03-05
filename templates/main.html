@@ -9,14 +9,20 @@
 	<title>Chris's Blog!</title>
 </head>
 <body>
-	{% include 'navbar.html' %}
+	<div id="wrapper">
+		{% include 'navbar.html' %}
+		<main id="boxes">
+			<div id="column"></div>
+			<div id="column-content">
+				{% block content %}
 
-	{% block content %}
 
-
-	{% endblock%}
-
-	{% include 'footer.html' %}
+				{% endblock%}
+			</div>
+			<div id="column"></div>
+		</main>
+		{% include 'footer.html' %}
+	</div>
 </body>
 <script src="{% static 'js/navbar-current.js' %}"></script>
 </html>

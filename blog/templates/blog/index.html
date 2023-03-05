@@ -3,36 +3,46 @@
 {% block content %}
 
 
-<h1 align="center">Search</h1>
-<div align="center">
+<div align="center" style="margin-bottom: 30px;">
+
 	<form method="get" action="{% url 'search' %}">
-		<input type="text" placeholder="Blog Search" name="query">
+		<input id="blog-search" type="text" placeholder="Blog Search" name="query">
 	</form>
+
 </div>
 
 
-<h1 align="center">Topics</h1>
-<div align="center">
+<h1 align="center" style="margin-bottom: 5px;">Topics</h1>
+<div align="center" style="margin-bottom: 30px;">
+
 	{% for category in categories %}
-	<a class="simple-link" href="{% url 'category_detail' category.slug %}">
-		{{ category.title }}<br>
-	</a>
+	<form action="{% url 'category_detail' category.slug %}" style="display: inline;">
+		<button id="blog-category" type="submit">{{ category.title }}</button>
+	</form>
 	{% endfor %}
+
 </div>
 
 
 <h1 align="center">Recent Posts</h1>
 <div align="center">
+
 	{% for post in posts %}
-	<a class="simple-link" href="{% url 'post_detail' post.category.slug post.slug %}">
+
 		{{ post.created_at | date:'M-d-Y'}}<br>
+		<a class="simple-link" href="{% url 'post_detail' post.category.slug post.slug %}">
 		{{ post.title }}<br>
 		{{ post.intro }}<br>
-	</a>
-	<a class="simple-link" href="{% url 'category_detail' post.category.slug %}">
-		Category: {{ post.category }}<br><br>
-	</a>
+		</a>
+
+		<form action="{% url 'category_detail' post.category.slug %}">
+			<button id="blog-category" type="submit">{{ post.category }}</button>
+		</form>
+
+		<br>
+
 	{% endfor %}
+
 </div>
 
 {% endblock content %}
