@@ -2,12 +2,18 @@
 
 {% block content %}
 
-<div align="center">
-	<h4>{{ post.created_at | date:'M-d-Y'}}</h4>
-	<h1>{{ post.title }}</h1>
-	<h4>Category: <a class="simple-link" href="{% url 'category_detail' post.category.slug %}">{{ post.category }}</a></h4>
-	<h2>{{ post.intro }}</h2>
-	<h2>{{ post.body }}</h2>
+<div style="margin-left: 5%; margin-right: 5%;">
+
+	<div class="detail-path">
+		<a class="simple-link" href="{% url 'blog' %}">Blog</a> > <a class="simple-link" href="{% url 'category_detail' post.category.slug %}">{{ post.category }}</a> > <a class="simple-link" href="{% url 'post_detail' post.category.slug post.slug %}">{{ post.title }}</a>
+	</div>
+
+	<div>
+		<div class="detail-title">{{ post.title }}</div>
+		<div class="created_at">by Chris - {{ post.created_at | date:'M d, Y'}}</div>
+	</div>
+	<div class="detail-body">{{ post.body }}</div>
+
 </div>
 
 {% endblock %}

@@ -44,7 +44,7 @@
 				{{ post.intro }}
 			</div>
 
-			<form action="{% url 'category_detail' post.category.slug %}">
+			<form action="{% url 'post_detail' post.category.slug post.slug %}">
 				<button class="continue-button" type="submit">Continue Reading &rArr;</button>
 			</form>
 		</div>
