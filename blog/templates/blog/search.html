@@ -2,23 +2,40 @@
 
 {% block content %}
 
-<div align="center">
-	<h1>Search Results</h1>
-	<h3>Query: "{{query}}"</h3>
+<div style="margin-top: 1%; margin-bottom: 1%; margin-left: 5%; margin-right: 5%;">
+
+	<h1 align="center">Search Results</h1>
+	<h3 align="center">Query: "{{query}}"</h3>
+
 	{% for post in posts %}
-	<a class="simple-link" href="{% url 'post_detail' post.category.slug post.slug %}">
-		{{ post.created_at | date:'M-d-Y'}}<br>
-		{{ post.title }}<br>
-		{{ post.intro }}<br>
-	</a>
-	<a class="simple-link" href="{% url 'category_detail' post.category.slug %}">
-		Category: {{ post.category }}<br><br>
-	</a>
-	{% empty %}
-		<div>
-			<p>No results for given query...</p>
+
+		<div class="post">
+			<form action="{% url 'category_detail' post.category.slug %}">
+				<button class="post-category" type="submit"># {{ post.category }}</button>
+			</form>
+
+			<a class="post-title" href="{% url 'post_detail' post.category.slug post.slug %}">{{ post.title }}</a>
+
+			<div class="created_at">
+				by Chris - {{ post.created_at | date:'M d, Y'}}
+			</div>
+
+			<div class="post-intro">
+				{{ post.intro }}
+			</div>
+
+			<form action="{% url 'post_detail' post.category.slug post.slug %}">
+				<button class="continue-button" type="submit">Continue Reading &rArr;</button>
+			</form>
 		</div>
+
+		{% empty %}
+		<div>
+			<p align="center">No results for given query...</p>
+		</div>
+
 	{% endfor %}
+
 </div>
 
 {% endblock %}

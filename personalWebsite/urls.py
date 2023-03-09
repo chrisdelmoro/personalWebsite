@@ -30,5 +30,6 @@ urlpatterns = [
     path('robots.txt', robots_txt, name='robots_txt'),
     path('admin/', admin.site.urls),
     path('blog/', include('blog.urls')),
+    path('contact/', include('contact.urls')),
     path('', include('base.urls')),
 ]

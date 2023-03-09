@@ -10,9 +10,6 @@ def home(request):
 	context = {'posts':posts}
 	return render(request, 'base/index.html', context)
 
-def contact(request):
-	return render(request, 'base/contact.html')
-
 def robots_txt(request):
 	text = [
 		"User-Agent: *",
