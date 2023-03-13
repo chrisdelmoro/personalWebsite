@@ -2,7 +2,7 @@
 
 {% block content %}
 
-<div style="margin-left: 5%; margin-right: 5%;">
+<div class="div-content">
 
 	<div class="detail-path">
 		<a class="simple-link" href="{% url 'blog' %}">Blog</a> > <a class="simple-link" href="{% url 'category_detail' post.category.slug %}">{{ post.category }}</a> > <a class="simple-link" href="{% url 'post_detail' post.category.slug post.slug %}">{{ post.title }}</a>

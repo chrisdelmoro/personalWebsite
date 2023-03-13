@@ -3,17 +3,17 @@
 {% block content %}
 
 
-<div align="center" style="margin-bottom: 30px;">
+<div>
 
-	<form method="get" action="{% url 'search' %}">
+	<form style="text-align: center;" method="GET" action="{% url 'search' %}">
 		<input id="blog-search" type="text" placeholder="Blog Search" name="query">
 	</form>
 
 </div>
 
 
-<h1 align="center" style="margin-bottom: 5px;">Topics</h1>
-<div align="center" style="margin-bottom: 30px;">
+<h1>Topics</h1>
+<div>
 
 	{% for category in categories %}
 	<form action="{% url 'category_detail' category.slug %}" style="display: inline;">
@@ -23,9 +23,9 @@
 
 </div>
 
+<h1>Articles</h1>
 
-<h1 align="center">Recent Posts</h1>
-<div style="margin-top: 1%; margin-bottom: 1%; margin-left: 5%; margin-right: 5%;">
+<div class="div-content">
 
 	{% for post in posts %}
 

@@ -2,9 +2,9 @@
 
 {% block content %}
 
-<h1 align="center">Posts found</h1>
+<h1>Posts found</h1>
 
-<div style="margin-top: 1%; margin-bottom: 1%; margin-left: 5%; margin-right: 5%;">
+<div class="div-content">
 
 	{% for post in posts %}
 
@@ -30,7 +30,7 @@
 
 		{% empty %}
 		<div>
-			<p align="center">There is no posts in this category...</p>
+			<p>There is no posts in this category...</p>
 		</div>
 
 	{% endfor %}

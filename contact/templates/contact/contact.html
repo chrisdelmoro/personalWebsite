@@ -2,18 +2,20 @@
 
 {% block content %}
 
-<h1 align="center">Contact</h1>
+<h1>Contact</h1>
 
-<div align="center">
+<div>
 	<form method="POST" action=".">
 		{% csrf_token %}
 
-		{{ form.name }}
-		{{ form.from_email }}<br>
-		{{ form.subject }}<br>
-		{{ form.message }}
+		<div style="width: 100%;">
+			<div style="width: 50%; float: left; padding-left: 1%; padding-right: 0.5%;">{{ form.name }}</div>
+			<div style="width: 50%; float: left; padding-left: 0.5%; padding-right: 1%;">{{ form.from_email }}</div>
+			<div style="width: 100%; padding-left: 1%; padding-right: 1%;">{{ form.subject }}</div>
+			<div style="width: 100%; padding-left: 1%; padding-right: 1%;">{{ form.message }}</div>
 
-		<button class="contact-submit">Submit</button>
+			<div style="width: 100%; padding-left: 1%; padding-right: 1%;"><button class="contact-submit">Submit</button></div>
+		</div>
 	</form>
 </div>
 
