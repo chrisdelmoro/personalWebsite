@@ -101,7 +101,12 @@
 	margin-left: 2%;
 	margin-right: 2%;
 	text-align: justify;
-	text-justify: inter-word;
+	inline-size: auto;
+	word-break: break-all;
+	overflow-wrap: break-word;
+    hyphens: auto;
+	overflow: hidden;
+	text-overflow: ellipsis;
 }
 
 .post-title:hover {
@@ -157,7 +162,10 @@
 	margin-right: 2%;
 	padding-top: 2%;
 	text-align: justify;
-	text-justify: inter-word;
+	inline-size: auto;
+	word-break: break-all;
+	overflow-wrap: break-word;
+    hyphens: auto;
 }
 
 .detail-path {

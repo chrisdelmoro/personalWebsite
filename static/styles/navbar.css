@@ -1,17 +1,17 @@
 .navbar {
 	background-color: #141a1b;
-	padding-top: 1%;
-	padding-bottom: 1%;
+	padding-top: 2vh;
+	padding-bottom: 2vh;
 	text-align: center;
 }
 
 .navbar-link {
 	color: white;
 	text-decoration: none;
-	padding-top: 1%;
-	padding-bottom: 1%;
-	padding-left: 0.8%;
-	padding-right: 0.8%;
+	padding-top: 2vh;
+	padding-bottom: 2vh;
+	padding-left: 0.8vw;
+	padding-right: 0.8vw;
 	transition: background-color 0.1s, color 0.1s, border-bottom-width 0.1s, border-bottom-style 0.1s, border-bottom-color 0.1s;
 }
 

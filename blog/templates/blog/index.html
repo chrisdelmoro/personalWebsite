@@ -3,7 +3,7 @@
 {% block content %}
 
 
-<div>
+<div class="div-content">
 
 	<form style="text-align: center;" method="GET" action="{% url 'search' %}">
 		<input id="blog-search" type="text" placeholder="Blog Search" name="query">
@@ -13,7 +13,7 @@
 
 
 <h1>Topics</h1>
-<div>
+<div class="div-content">
 
 	{% for category in categories %}
 	<form action="{% url 'category_detail' category.slug %}" style="display: inline;">

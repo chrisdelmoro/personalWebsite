@@ -1,18 +1,17 @@
 .footer {
 	background-color: #141a1b;
-	padding-top: 0.5%;
-	padding-bottom: 0.5%;
+	padding-top: 1vh;
+	padding-bottom: 1vh;
 	text-align: center;
 	float: none;
 }
 
 .footer-text {
 	color: white;
-	font-size: 15px;
-	padding-bottom: 10px;
+	padding-bottom: 1vh;
 }
 
 .footer-link {
-	padding-right: 2px;
-	padding-left: 2px;
+	padding-right: 0.2rem;
+	padding-left: 0.2rem;
 }
