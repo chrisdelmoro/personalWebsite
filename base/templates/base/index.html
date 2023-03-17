@@ -1,17 +1,31 @@
 {% extends 'main.html' %}
+{% load static %}
 
 {% block content %}
 
 <h1>Chris's Webpage</h1>
 
-<div class="div-content">
-	Hi! I'm Christian and this is my personal space on the internet!
-	I created this website as parte of my personal journey learning Python,
-	and as a place where I can publish tutorials as a form os reinforcing
-	what I learn.
-	<br>
-	Texts here are not necessarily limited to computer science and programming topics,
-	as I'm interested in many other things.
+<div class="div-flex">
+	<div style="padding: 2%;">
+		<p>
+			Hi! I'm Christian and this is my personal space on the internet!
+			I created this website as parte of my personal journey learning Python,
+			and as a place where I can publish tutorials as a form os reinforcing
+			what I learn.
+		</p>
+		<p>
+			If you decide to follow my articles here, don't expect the
+			topics to always be computer science related. Since I have a lot of
+			interests, ranging from programming to woodworking. I can post about pretty
+			much anything here.
+		</p>
+	</div>
+	<div style="padding: 2%;">
+		<figure>
+			<img src="{% static 'images/Profile3.jpg' %}" alt="Me" style="height: 18rem; border-radius: 100vw; border: 5px solid white;">
+			<figcaption>Me</figcaption>
+		</figure>
+	</div>
 </div>
 
 
