@@ -13,18 +13,20 @@
 	<title>Chris's Blog!</title>
 </head>
 <body>
-	<div id="wrapper">
+	<div class="wrapper">
 		{% include 'navbar.html' %}
-		<main id="boxes">
-			<div class="column"></div>
-			<div id="column-content">
-				{% block content %}
+		<div class="site-body">
+			<div class="content-layout">
+				<aside class="content-deadspace"></aside>
+				<div class="content-body">
+					{% block content %}
 
 
-				{% endblock content %}
+					{% endblock content %}
+				</div>
+				<aside class="content-deadspace"></aside>
 			</div>
-			<div class="column"></div>
-		</main>
+		</div>
 		{% include 'footer.html' %}
 	</div>
 </body>

@@ -9,12 +9,12 @@
 		{% csrf_token %}
 
 		<div style="width: 100%;">
-			<div style="width: 50%; float: left; padding-left: 1%; padding-right: 0.5%;">{{ form.name }}</div>
-			<div style="width: 50%; float: left; padding-left: 0.5%; padding-right: 1%;">{{ form.from_email }}</div>
-			<div style="width: 100%; padding-left: 1%; padding-right: 1%;">{{ form.subject }}</div>
-			<div style="width: 100%; padding-left: 1%; padding-right: 1%;">{{ form.message }}</div>
+			<div style="width: 50%; float: left; padding-right: 0.5%;">{{ form.name }}</div>
+			<div style="width: 50%; float: left; padding-left: 0.5%;">{{ form.from_email }}</div>
+			<div style="width: 100%;">{{ form.subject }}</div>
+			<div style="width: 100%;">{{ form.message }}</div>
 
-			<div style="width: 100%; padding-left: 1%; padding-right: 1%;"><button class="contact-submit">Submit</button></div>
+			<div style="width: 100%;"><button class="contact-submit">Submit</button></div>
 		</div>
 	</form>
 </div>

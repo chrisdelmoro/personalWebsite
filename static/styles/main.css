@@ -1,10 +1,9 @@
 * {
-	margin: 0;
-	padding: 0;
 	font-family: Arial, Helvetica, sans-serif;
 	box-sizing: border-box;
 	text-align: center;
-	font-size: 1rem;
+	margin: 0;
+	padding: 0;
 }
 
 ::-webkit-scrollbar {
@@ -23,6 +22,10 @@
 	background: #16a085;
 }
 
+html, body {
+	height: 100svh;
+}
+
 body {
 	background-color: #222b2e;
 	color: #9daaa8;
@@ -30,11 +33,44 @@ body {
 
 h1 {
 	margin: 2%;
-	font-size: 2.2rem;
+	font-size: 2rem;
 }
 
 p {
 	text-align: justify;
+	font-size: 1rem;
+}
+
+.wrapper {
+	display: flex;
+	flex-direction: column;
+	height: 100%;
+	width: 100%;
+}
+
+.site-body {
+	flex: 10;
+}
+
+.content-layout {
+	display: flex;
+	height: 100%;
+}
+
+.content-deadspace {
+	background-color: #1b2224;
+	flex: 1;
+}
+
+.content-body {
+	background-color: #222b2e;
+	color: #9daaa8;
+	text-align: justify;
+	padding-top: 1%;
+	padding-bottom: 1%;
+	padding-left: 1%;
+	padding-right: 1%;
+	flex: 5;
 }
 
 form {
@@ -52,58 +88,63 @@ form {
 	text-decoration: underline;
 }
 
-#boxes {
+#home-intro {
 	display: flex;
+	column-gap: 2%;
 }
 
-.column {
-	width: 15vw;
-	background-color: #1b2224;
+#intro-text {
+	align-self: center;
+	flex: 2;
 }
 
-#column-content {
-	width: 70vw;
-	background-color: #222b2e;
+#intro-photo-box {
+	flex: 1;
 }
 
-.div-flex {
-	margin-top: 1%;
-	margin-bottom: 1%;
-	margin-left: 5%;
-	margin-right: 5%;
-	display: flex;
+#intro-photo {
+	width: 80%;
+	height: 80%;
+	border-radius: 100vw;
+	border: 5px solid white;
 }
 
-@media (max-width: 992px) {
-	.column {
-		width: 10vw;
+@media screen and (max-width: 992px) {
+	.content-body {
+		flex: 7;
 	}
 
-	#column-content {
-		width: 80vw;
-	}
-}
-
-@media (max-width: 768px) {
-	.column {
-		width: 5vw;
-	}
-
-	#column-content {
-		width: 90vw;
-	}
-
-	.div-flex {
+	#home-intro {
 		flex-direction: column-reverse;
 	}
-}
 
-@media (max-width: 600px) {
-	.column {
-		width: 0vw;
+	#intro-photo-box {
+		padding-bottom: 1.5%;
 	}
 
-	#column-content {
-		width: 100vw;
+	#intro-photo {
+		width: 60%;
+		height: 60%;
+	}
+}
+
+@media screen and (max-width: 768px) {
+	.content-body {
+		flex: 10;
+	}
+}
+
+@media screen and (max-width: 600px) {
+	.content-deadspace {
+		flex: 0;
+	}
+
+	.content-body {
+		flex: 1;
+	}
+
+	#intro-photo {
+		width: 70%;
+		height: 70%;
 	}
 }

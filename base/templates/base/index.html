@@ -5,8 +5,8 @@
 
 <h1>Chris's Webpage</h1>
 
-<div class="div-flex">
-	<div style="padding: 2%;">
+<div id="home-intro">
+	<div id="intro-text">
 		<p>
 			Hi! I'm Christian and this is my personal space on the internet!
 			I created this website as parte of my personal journey learning Python,
@@ -20,10 +20,10 @@
 			much anything here.
 		</p>
 	</div>
-	<div style="padding: 2%;">
+	<div id="intro-photo-box">
 		<figure>
-			<img src="{% static 'images/Profile3.jpg' %}" alt="Me" style="height: 18rem; border-radius: 100vw; border: 5px solid white;">
-			<figcaption>Me</figcaption>
+			<img id="intro-photo" src="{% static 'images/Profile3.jpg' %}" alt="Me">
+			<figcaption><i><b>Me</b></i></figcaption>
 		</figure>
 	</div>
 </div>
@@ -47,7 +47,7 @@
 		</div>
 
 		<div class="post-intro">
-			{{ post.intro }}
+			<p>{{ post.intro }}</p>
 		</div>
 
 		<form action="{% url 'post_detail' post.category.slug post.slug %}">

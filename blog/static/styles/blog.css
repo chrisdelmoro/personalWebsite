@@ -5,7 +5,6 @@
 	text-align: center;
 	color: white;
 	padding: 5px;
-	margin-top: 1%;
 }
 
 #blog-search::placeholder {
@@ -32,13 +31,6 @@
 .blog-category:hover {
 	background-color: #16a085;
 	color: #141a1b;
-}
-
-.div-content {
-	margin-top: 1%;
-	margin-bottom: 1%;
-	margin-left: 5%;
-	margin-right: 5%;
 }
 
 .post {
