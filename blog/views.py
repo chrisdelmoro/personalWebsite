@@ -8,7 +8,7 @@ def blog(request):
 	posts = Post.objects.filter(status=Post.ACTIVE)
 	category = Category.objects.all()
 	context = {'posts':posts, 'categories':category}
-	return render(request, 'blog/index.html', context)
+	return render(request, 'blog/blog.html', context)
 
 def detail(request, category_slug, slug):
 	post = get_object_or_404(Post, slug=slug, status=Post.ACTIVE)

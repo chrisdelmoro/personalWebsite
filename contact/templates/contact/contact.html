@@ -8,13 +8,17 @@
 	<form method="POST" action=".">
 		{% csrf_token %}
 
-		<div style="width: 100%;">
-			<div style="width: 50%; float: left; padding-right: 0.5%;">{{ form.name }}</div>
-			<div style="width: 50%; float: left; padding-left: 0.5%;">{{ form.from_email }}</div>
-			<div style="width: 100%;">{{ form.subject }}</div>
-			<div style="width: 100%;">{{ form.message }}</div>
+		<div id="contact-wrapper">
 
-			<div style="width: 100%;"><button class="contact-submit">Submit</button></div>
+			<div id="contact-half-field-wrapper">
+				<div class="contact-half-field">{{ form.name }}</div>
+				<div class="contact-half-field">{{ form.from_email }}</div>
+			</div>
+			<div class="contact-full-field">{{ form.subject }}</div>
+			<div class="contact-full-field">{{ form.message }}</div>
+
+			<div class="contact-full-field"><button id="contact-submit">Submit</button></div>
+
 		</div>
 	</form>
 </div>

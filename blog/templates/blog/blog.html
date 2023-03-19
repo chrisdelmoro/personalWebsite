@@ -3,7 +3,7 @@
 {% block content %}
 
 
-<div class="div-content">
+<div>
 
 	<form style="text-align: center;" method="GET" action="{% url 'search' %}">
 		<input id="blog-search" type="text" placeholder="Blog Search" name="query">
@@ -13,10 +13,10 @@
 
 
 <h1>Topics</h1>
-<div class="div-content">
+<div id="categories">
 
 	{% for category in categories %}
-	<form action="{% url 'category_detail' category.slug %}" style="display: inline;">
+	<form action="{% url 'category_detail' category.slug %}">
 		<button class="blog-category" type="submit">{{ category.title }}</button>
 	</form>
 	{% endfor %}
@@ -25,7 +25,7 @@
 
 <h1>Articles</h1>
 
-<div class="div-content">
+<div id="blog-posts">
 
 	{% for post in posts %}
 
@@ -41,7 +41,7 @@
 			</div>
 
 			<div class="post-intro">
-				<p>{{ post.intro }}</p>
+				{{ post.intro }}
 			</div>
 
 			<form action="{% url 'post_detail' post.category.slug post.slug %}">

@@ -7,18 +7,14 @@
 
 <div id="home-intro">
 	<div id="intro-text">
-		<p>
 			Hi! I'm Christian and this is my personal space on the internet!
 			I created this website as parte of my personal journey learning Python,
 			and as a place where I can publish tutorials as a form os reinforcing
 			what I learn.
-		</p>
-		<p>
 			If you decide to follow my articles here, don't expect the
 			topics to always be computer science related. Since I have a lot of
 			interests, ranging from programming to woodworking. I can post about pretty
 			much anything here.
-		</p>
 	</div>
 	<div id="intro-photo-box">
 		<figure>
@@ -31,7 +27,7 @@
 
 <h1>Recent Posts</h1>
 
-<div class="div-content">
+<div id="blog-posts">
 
 	{% for post in posts %}
 
@@ -47,7 +43,7 @@
 		</div>
 
 		<div class="post-intro">
-			<p>{{ post.intro }}</p>
+			{{ post.intro }}
 		</div>
 
 		<form action="{% url 'post_detail' post.category.slug post.slug %}">

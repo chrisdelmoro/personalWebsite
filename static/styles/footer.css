@@ -1,25 +1,29 @@
-.footer {
+#footer {
 	background-color: #141a1b;
 	min-height: 3.9rem;
 }
 
-.footer-content {
+#footer-content {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
 	height: 100%;
 }
 
-.footer-text {
+#footer-text {
 	display: flex;
 	align-items: center;
 	height: 50%;
 	color: white;
 }
 
-.footer-icons {
+#footer-icons {
 	display: flex;
 	height: 50%;
 	column-gap: 10px;
 	color: white;
+}
+
+.channel-icon {
+	height: 24px;
 }

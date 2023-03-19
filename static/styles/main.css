@@ -24,10 +24,11 @@
 
 html, body {
 	height: 100svh;
+	min-width: 250px;
 }
 
 body {
-	background-color: #222b2e;
+	background-color: #141a1b;
 	color: #9daaa8;
 }
 
@@ -36,9 +37,8 @@ h1 {
 	font-size: 2rem;
 }
 
-p {
-	text-align: justify;
-	font-size: 1rem;
+form {
+	text-align: left;
 }
 
 .wrapper {
@@ -62,7 +62,7 @@ p {
 	flex: 1;
 }
 
-.content-body {
+#content-body {
 	background-color: #222b2e;
 	color: #9daaa8;
 	text-align: justify;
@@ -73,58 +73,9 @@ p {
 	flex: 5;
 }
 
-form {
-	text-align: left;
-}
-
-.simple-link {
-	font-size: 0.8rem;
-	color: lightblue;
-	text-decoration: none;
-}
-
-.simple-link:hover {
-	color: #16a085;
-	text-decoration: underline;
-}
-
-#home-intro {
-	display: flex;
-	column-gap: 2%;
-}
-
-#intro-text {
-	align-self: center;
-	flex: 2;
-}
-
-#intro-photo-box {
-	flex: 1;
-}
-
-#intro-photo {
-	width: 80%;
-	height: 80%;
-	border-radius: 100vw;
-	border: 5px solid white;
-}
-
 @media screen and (max-width: 992px) {
 	.content-body {
 		flex: 7;
-	}
-
-	#home-intro {
-		flex-direction: column-reverse;
-	}
-
-	#intro-photo-box {
-		padding-bottom: 1.5%;
-	}
-
-	#intro-photo {
-		width: 60%;
-		height: 60%;
 	}
 }
 
@@ -141,10 +92,5 @@ form {
 
 	.content-body {
 		flex: 1;
-	}
-
-	#intro-photo {
-		width: 70%;
-		height: 70%;
 	}
 }

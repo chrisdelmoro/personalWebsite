@@ -1,4 +1,29 @@
-.text-input-half-width {
+#contact-wrapper {
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
+}
+
+#contact-half-field-wrapper {
+	display: flex;
+	gap: 10px;
+}
+
+@media screen and (max-width: 600px) {
+	#contact-half-field-wrapper {
+		flex-direction: column;
+	}
+}
+
+.contact-half-field {
+	flex: 1;
+}
+
+.contact-full-field {
+	flex: 1;
+}
+
+.text-input-half-width, .text-input-full-width {
 	background-color: #141a1b;
 	border-style: none;
 	border-radius: 5px;
@@ -8,18 +33,7 @@
 	padding: 5px;
 }
 
-.text-input-full-width {
-	background-color: #141a1b;
-	border-style: none;
-	border-radius: 5px;
-	color: white;
-	text-align: left;
-	width: 100%;
-	padding: 5px;
-	margin-top: 1%;
-}
-
-.contact-submit {
+#contact-submit {
 	background-color: #16a085;
 	color: #141a1b;
 	border-color: #16a085;
@@ -29,17 +43,29 @@
 	text-decoration: none;
 	cursor: pointer;
 	width: 100%;
-	padding-top: 5px;
-	padding-bottom: 5px;
-	padding-left: 5px;
-	padding-right: 5px;
-	margin-top: 1%;
-	margin-bottom: 1%;
-	vertical-align: top;
+	padding: 5px;
 	transition: background-color 0.1s, color 0.1s;
 }
 
 .contact-submit:hover {
 	background-color: #141a1b;
 	color: #16a085;
+}
+
+.contact-other-channels-text {
+	font-weight: bold;
+}
+
+#contact-other-channels-icons {
+	display: inline-flex;
+	gap: 25px;
+	justify-content: center;
+	align-items: center;
+	flex-wrap: wrap;
+	border-width: 1px;
+	border-style: solid;
+	border-color: #9daaa8;
+	border-radius: 10px;
+	margin-top: 10px;
+	padding: 1.5%;
 }

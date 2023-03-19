@@ -1,0 +1,47 @@
+#home-intro {
+	display: flex;
+	column-gap: 2%;
+}
+
+#intro-text {
+	align-self: center;
+	text-align: justify;
+	flex: 2;
+}
+
+#intro-photo-box {
+	flex: 1;
+}
+
+#intro-photo {
+	width: 80%;
+	height: 80%;
+	border-radius: 100vw;
+	border: 5px solid white;
+}
+
+@media screen and (max-width: 992px) {
+	#home-intro {
+		flex-direction: column-reverse;
+	}
+
+	#intro-photo-box {
+		padding-bottom: 1.5%;
+	}
+
+	#intro-photo {
+		width: 60%;
+		height: 60%;
+	}
+}
+
+@media screen and (max-width: 600px) {
+	.content-body {
+		flex: 1;
+	}
+
+	#intro-photo {
+		width: 70%;
+		height: 70%;
+	}
+}

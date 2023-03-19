@@ -1,7 +1,34 @@
 {% extends 'main.html' %}
 
+{% load static %}
+
 {% block content %}
 
-<div class="div-content">SUCCESS!</div>
+<div>
+	<p class="contact-other-channels-text">Your contact e-mail was sent successfully!</p>
+	<br>
+	<p>If for some reason you do not get a response, you can try to contact me on my other channels:</p>
+
+	<div id="contact-other-channels-icons">
+		<figure>
+			<a class="footer-link" href="https://github.com/chrisdelmoro" target="_blank">
+				<img src="{% static 'images/github-icon.png' %}" alt="Github" height="100px">
+			</a>
+			<figcaption>Github</figcaption>
+		</figure>
+		<figure>
+			<a class="footer-link" href="https://github.com/chrisdelmoro" target="_blank">
+				<img src="{% static 'images/linkedin-icon.png' %}" alt="Linkedin" height="100px">
+			</a>
+			<figcaption>LinkedIn</figcaption>
+		</figure>
+		<figure>
+			<a class="footer-link" href="https://www.youtube.com/@chrisdelmoro" target="_blank">
+				<img src="{% static 'images/youtube-icon.png' %}" alt="Youtube" height="100px">
+			</a>
+			<figcaption>YouTube</figcaption>
+		</figure>
+	</div>
+</div>
 
 {% endblock content %}

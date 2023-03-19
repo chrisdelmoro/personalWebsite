@@ -9,7 +9,7 @@ def home(request):
 	posts = Post.objects.filter(status=Post.ACTIVE)
 	posts = posts[0:2]
 	context = {'posts':posts}
-	return render(request, 'base/index.html', context)
+	return render(request, 'base/home.html', context)
 
 def robots_txt(request):
 	text = [

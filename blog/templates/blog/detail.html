@@ -2,9 +2,9 @@
 
 {% block content %}
 
-<div class="div-content">
+<div id="post-detail">
 
-	<div class="detail-path">
+	<div id="detail-path">
 		<a class="simple-link" href="{% url 'blog' %}">Blog</a> > <a class="simple-link" href="{% url 'category_detail' post.category.slug %}">{{ post.category }}</a> > <a class="simple-link" href="{% url 'post_detail' post.category.slug post.slug %}">{{ post.title }}</a>
 	</div>
 
