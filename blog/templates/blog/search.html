@@ -2,11 +2,13 @@
 
 {% block content %}
 
-<div class="div-content">
+<div>
 
 	<h1>Search Results</h1>
 	<h3>Query: "{{query}}"</h3>
+	<br>
 
+<div id="blog-posts">
 	{% for post in posts %}
 
 		<div class="post">
@@ -31,11 +33,12 @@
 
 		{% empty %}
 		<div>
-			<br>
 			<h3>No results for given query...</h3>
 		</div>
 
 	{% endfor %}
+
+</div>
 
 </div>
 
