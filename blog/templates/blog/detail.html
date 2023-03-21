@@ -1,18 +1,27 @@
 {% extends 'main.html' %}
 
+{% load static %}
+
 {% block content %}
 
 <div id="post-detail">
 
 	<div id="detail-path">
-		<a class="simple-link" href="{% url 'blog' %}">Blog</a> > <a class="simple-link" href="{% url 'category_detail' post.category.slug %}">{{ post.category }}</a> > <a class="simple-link" href="{% url 'post_detail' post.category.slug post.slug %}">{{ post.title }}</a>
+		<a class="simple-link" href="{% url 'blog' %}">Blog</a>
+		<a class="simple-link-gt" href="">&gt;</a>
+		<a class="simple-link" href="{% url 'category_detail' post.category.slug %}">{{ post.category }}</a>
+		<a class="simple-link-gt" href=".">&gt;</a>
+		<a class="simple-link" href="{% url 'post_detail' post.category.slug post.slug %}">{{ post.title }}</a>
 	</div>
 
 	<div>
 		<div class="detail-title">{{ post.title }}</div>
 		<div class="created_at">by Chris - {{ post.created_at | date:'M d, Y'}}</div>
 	</div>
-	<div class="detail-body">{{ post.body }}</div>
+	<div class="detail-body">
+		<img class="detail-img" src="{% static 'images/post-img.jpg' %}" alt="post-image">
+		{{ post.body }}
+	</div>
 
 </div>
 

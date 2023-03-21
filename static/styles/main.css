@@ -74,14 +74,14 @@ form {
 }
 
 @media screen and (max-width: 992px) {
-	.content-body {
-		flex: 7;
+	#content-body {
+		flex: 8;
 	}
 }
 
 @media screen and (max-width: 768px) {
-	.content-body {
-		flex: 10;
+	#content-body {
+		flex: 15;
 	}
 }
 
@@ -90,7 +90,47 @@ form {
 		flex: 0;
 	}
 
-	.content-body {
+	#content-body {
 		flex: 1;
+	}
+}
+
+@media screen and (min-width: 2560px) {
+	* {
+		font-size: 1.2rem;
+	}
+
+	h1 {
+		font-size: 3rem;
+	}
+}
+
+@media screen and (min-width: 3840px) {
+	* {
+		font-size: 1.5rem;
+	}
+
+	h1 {
+		font-size: 3.4rem;
+	}
+}
+
+@media screen and (min-width: 5120px) {
+	* {
+		font-size: 1.8rem;
+	}
+
+	h1 {
+		font-size: 3.7rem;
+	}
+}
+
+@media screen and (min-width: 7680px) {
+	* {
+		font-size: 2rem;
+	}
+
+	h1 {
+		font-size: 4rem;
 	}
 }

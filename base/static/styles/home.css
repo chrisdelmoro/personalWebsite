@@ -36,10 +36,6 @@
 }
 
 @media screen and (max-width: 600px) {
-	.content-body {
-		flex: 1;
-	}
-
 	#intro-photo {
 		width: 70%;
 		height: 70%;

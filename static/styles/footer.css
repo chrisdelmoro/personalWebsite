@@ -19,6 +19,7 @@
 
 #footer-icons {
 	display: flex;
+	align-items: center;
 	height: 50%;
 	column-gap: 10px;
 	color: white;
@@ -26,4 +27,44 @@
 
 .channel-icon {
 	height: 24px;
+}
+
+@media screen and (min-width: 2560px) {
+	#footer {
+		min-height: 100px;
+	}
+
+	.channel-icon {
+		height: 40px;
+	}
+}
+
+@media screen and (min-width: 3840px) {
+	#footer {
+		min-height: 150px;
+	}
+
+	.channel-icon {
+		height: 60px;
+	}
+}
+
+@media screen and (min-width: 5120px) {
+	#footer {
+		min-height: 200px;
+	}
+
+	.channel-icon {
+		height: 80px;
+	}
+}
+
+@media screen and (min-width: 7680px) {
+	#footer {
+		min-height: 250px;
+	}
+
+	.channel-icon {
+		height: 100px;
+	}
 }

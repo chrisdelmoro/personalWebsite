@@ -29,3 +29,15 @@
 	background-color: #16a085;
 	   border-bottom-color: white;
 }
+
+@media screen and (min-width: 5120px) {
+	.header {
+		min-height: 5rem;
+	}
+}
+
+@media screen and (min-width: 7680px) {
+	.header {
+		min-height: 6rem;
+	}
+}

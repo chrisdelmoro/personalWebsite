@@ -56,7 +56,7 @@
 	font-weight: bold;
 }
 
-#contact-other-channels-icons {
+#contact-other-channels-box {
 	display: inline-flex;
 	gap: 25px;
 	justify-content: center;
@@ -68,4 +68,48 @@
 	border-radius: 10px;
 	margin-top: 10px;
 	padding: 1.5%;
+}
+
+.contact-other-channel-icon {
+	height: 100px;
+}
+
+@media screen and (min-width: 2560px) {
+	#contact-other-channels-box {
+		gap: 40px;
+	}
+
+	.contact-other-channel-icon {
+		height: 150px;
+	}
+}
+
+@media screen and (min-width: 3840px) {
+	#contact-other-channels-box {
+		gap: 50px;
+	}
+
+	.contact-other-channel-icon {
+		height: 225px;
+	}
+}
+
+@media screen and (min-width: 5120px) {
+	#contact-other-channels-box {
+		gap: 60px;
+	}
+
+	.contact-other-channel-icon {
+		height: 300px;
+	}
+}
+
+@media screen and (min-width: 7680px) {
+	#contact-other-channels-box {
+		gap: 80px;
+	}
+
+	.contact-other-channel-icon {
+		height: 400px;
+	}
 }
