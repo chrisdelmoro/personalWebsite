@@ -49,6 +49,7 @@ INSTALLED_APPS = [
     'base.apps.BaseConfig',
     'blog.apps.BlogConfig',
     'contact.apps.ContactConfig',
+    'ckeditor',
 ]
 
 MIDDLEWARE = [

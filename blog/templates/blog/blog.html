@@ -48,7 +48,7 @@
 				</div>
 
 				<div class="post-intro">
-					{{ post.intro }}
+					{{ post.intro | safe }}
 				</div>
 
 				<form action="{% url 'post_detail' post.category.slug post.slug %}">

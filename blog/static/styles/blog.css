@@ -129,6 +129,10 @@
 	margin-bottom: 10px;
 }
 
+.post-intro > p {
+	text-align: justify;
+}
+
 .post-title:hover {
 	color: #16a085;
 }
@@ -186,6 +190,10 @@
 	border-left: none;
 	border-right: none;
 	border-bottom: none;
+	text-align: justify;
+}
+
+.detail-body > p {
 	text-align: justify;
 }
 

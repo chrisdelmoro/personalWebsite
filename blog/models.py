@@ -1,5 +1,7 @@
 from django.db import models
 
+from ckeditor.fields import RichTextField
+
 
 class Category(models.Model):
 	title = models.CharField(max_length=255)
@@ -27,8 +29,10 @@ class Post(models.Model):
 	category = models.ForeignKey(Category, related_name='posts', on_delete=models.CASCADE)
 	title = models.CharField(max_length=255)
 	slug = models.SlugField()
-	intro = models.TextField()
-	body = models.TextField()
+	intro = RichTextField()
+	body = RichTextField()
+	""" intro = models.TextField() """
+	""" body = models.TextField() """
 	created_at = models.DateTimeField(auto_now_add = True)
 	status = models.CharField(max_length=10, choices=CHOISE_STATUS, default=ACTIVE)
 
