@@ -15,3 +15,10 @@ class PostSitemap(Sitemap):
 
 	def lastmod(self, obj):
 		return obj.created_at
+
+class ContactSitemap(Sitemap):
+	def items(self):
+		return ['contact']
+
+	def location(self, item):
+		return reverse(item)

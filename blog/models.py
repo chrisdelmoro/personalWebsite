@@ -31,8 +31,6 @@ class Post(models.Model):
 	slug = models.SlugField()
 	intro = RichTextField()
 	body = RichTextField()
-	""" intro = models.TextField() """
-	""" body = models.TextField() """
 	created_at = models.DateTimeField(auto_now_add = True)
 	status = models.CharField(max_length=10, choices=CHOISE_STATUS, default=ACTIVE)
 
