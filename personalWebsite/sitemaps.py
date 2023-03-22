@@ -5,6 +5,13 @@ from django.shortcuts import reverse
 from blog.models import Category, Post
 
 
+class HomeSitemap(Sitemap):
+	def items(self):
+		return ['home']
+
+	def location(self, item):
+		return reverse(item)
+
 class CategorySitemap(Sitemap):
 	def items(self):
 		return Category.objects.all()

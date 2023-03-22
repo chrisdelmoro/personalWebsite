@@ -19,11 +19,11 @@ from django.contrib.sitemaps.views import sitemap
 
 from django.urls import path, include
 
-from .sitemaps import CategorySitemap, PostSitemap, ContactSitemap
+from .sitemaps import HomeSitemap, CategorySitemap, PostSitemap, ContactSitemap
 
 from base.views import robots_txt
 
-sitemaps = {'category': CategorySitemap, 'post': PostSitemap, 'contact':ContactSitemap,}
+sitemaps = {'home': HomeSitemap, 'category': CategorySitemap, 'post': PostSitemap, 'contact': ContactSitemap,}
 
 urlpatterns = [
     path('sitemap.xml', sitemap, {'sitemaps':sitemaps}),
