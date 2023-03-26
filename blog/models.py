@@ -57,7 +57,7 @@ class PostImages(models.Model):
 	image = models.ImageField(blank=True, null=True, upload_to=post_images_path)
 
 	class Meta:
-		verbose_name_plural: 'PostImages'
+		verbose_name_plural = 'Post Images'
 
 	def __str__(self):
 		return self.post.title
