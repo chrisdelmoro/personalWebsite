@@ -23,6 +23,9 @@ from .sitemaps import HomeSitemap, CategorySitemap, PostSitemap, ContactSitemap
 
 from base.views import robots_txt
 
+from django.conf import settings
+from django.conf.urls.static import static
+
 sitemaps = {'home': HomeSitemap, 'category': CategorySitemap, 'post': PostSitemap, 'contact': ContactSitemap,}
 
 urlpatterns = [
@@ -32,4 +35,4 @@ urlpatterns = [
     path('blog/', include('blog.urls')),
     path('contact/', include('contact.urls')),
     path('', include('base.urls')),
-]
+] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

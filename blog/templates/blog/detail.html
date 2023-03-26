@@ -1,6 +1,7 @@
 {% extends 'main.html' %}
 
 {% load static %}
+{% load image_url %}
 
 {% block content %}
 
@@ -19,7 +20,8 @@
 		<div class="created_at">by Chris - {{ post.created_at | date:'M d, Y'}}</div>
 	</div>
 	<div class="detail-body">
-		<img class="detail-img" src="{% static 'images/post-img1.jpg' %}" alt="post-image">
+
+		<img class="detail-img" src="{{ post.header_img.url }}" alt="header-image">
 		{{ post.body | safe }}
 	</div>
 

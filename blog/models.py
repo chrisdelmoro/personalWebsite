@@ -17,6 +17,7 @@ class Category(models.Model):
 	def get_absolute_url(self):
 		return '/%s/' % self.slug
 
+
 class Post(models.Model):
 	ACTIVE = 'active'
 	DRAFT = 'draft'
@@ -29,6 +30,7 @@ class Post(models.Model):
 	category = models.ForeignKey(Category, related_name='posts', on_delete=models.CASCADE)
 	title = models.CharField(max_length=255)
 	slug = models.SlugField()
+	header_img = models.ImageField(blank=True, null=True, upload_to='images/')
 	intro = RichTextField()
 	body = RichTextField()
 	created_at = models.DateTimeField(auto_now_add = True)
@@ -42,3 +44,14 @@ class Post(models.Model):
 
 	def get_absolute_url(self):
 		return '/%s/%s/' % (self.category.slug, self.slug)
+
+
+class PostImages(models.Model):
+	post = models.ForeignKey(Post, related_name='images', on_delete=models.CASCADE)
+	image = models.ImageField(blank=True, null=True, upload_to='images/')
+
+	class Meta:
+		verbose_name_plural: 'PostImages'
+
+	def __str__(self):
+		return self.post.title
