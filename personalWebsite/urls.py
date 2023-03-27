@@ -21,7 +21,7 @@ from django.urls import path, include
 
 from .sitemaps import HomeSitemap, CategorySitemap, PostSitemap, ContactSitemap
 
-from base.views import robots_txt
+from base.views import robots_txt, favicon_file, web_manifest_files
 
 from django.conf import settings
 from django.conf.urls.static import static
@@ -30,6 +30,16 @@ sitemaps = {'home': HomeSitemap, 'category': CategorySitemap, 'post': PostSitema
 
 urlpatterns = [
     path('sitemap.xml', sitemap, {'sitemaps':sitemaps}),
+    path("android-chrome-192x192.png", favicon_file),
+    path("android-chrome-512x512.png", favicon_file),
+    path("apple-touch-icon.png", favicon_file),
+    path("browserconfig.xml", web_manifest_files),
+    path("favicon-16x16.png", favicon_file),
+    path("favicon-32x32.png", favicon_file),
+    path("favicon.ico", favicon_file),
+    path("mstile-150x150.png", favicon_file),
+    path("safari-pinned-tab.svg", favicon_file),
+    path("site.webmanifest", web_manifest_files),
     path('robots.txt', robots_txt, name='robots_txt'),
     path('admin/', admin.site.urls),
     path('blog/', include('blog.urls')),
