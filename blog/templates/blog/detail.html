@@ -18,6 +18,14 @@
 	<div>
 		<div class="detail-title">{{ post.title }}</div>
 		<div class="created_at">by Chris - {{ post.created_at | date:'M d, Y'}}</div>
+		<div id="detail-path">
+			{% if tags.exists %}
+			<p style="display: inline;">tags:</p>
+				{% for tag in tags %}
+					<a class="simple-link" href="{% url 'tag_detail' tag.slug %}">#{{ tag }}</a>
+				{% endfor %}
+			{% endif %}
+		</div>
 	</div>
 	<div class="detail-body">
 

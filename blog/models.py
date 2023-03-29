@@ -2,6 +2,8 @@ from django.db import models
 
 from ckeditor.fields import RichTextField
 
+from taggit.managers import TaggableManager
+
 
 class Category(models.Model):
 	title = models.CharField(max_length=255)
@@ -31,6 +33,7 @@ class Post(models.Model):
 	)
 
 	category = models.ForeignKey(Category, related_name='posts', on_delete=models.CASCADE)
+	tags = TaggableManager()
 	title = models.CharField(max_length=255)
 	slug = models.SlugField()
 	header_img = models.ImageField(blank=True, null=True, upload_to=post_header_path)
