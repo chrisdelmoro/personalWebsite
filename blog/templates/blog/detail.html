@@ -29,7 +29,9 @@
 	</div>
 	<div class="detail-body">
 
-		<img class="detail-img" src="{{ post.header_img.url }}" alt="header-image">
+		{% if post.header_img %}
+			<img class="detail-img" src="{{ post.header_img.url }}" alt="header-image">
+		{% endif %}
 		{{ post.body | safe }}
 	</div>
 
