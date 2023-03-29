@@ -7,7 +7,7 @@
 
 <div id="post-detail">
 
-	<div id="detail-path">
+	<div class="detail-path">
 		<a class="simple-link" href="{% url 'blog' %}">Blog</a>
 		<a class="simple-link-gt" href="">&gt;</a>
 		<a class="simple-link" href="{% url 'category_detail' post.category.slug %}">{{ post.category }}</a>
@@ -18,17 +18,19 @@
 	<div>
 		<div class="detail-title">{{ post.title }}</div>
 		<div class="created_at">by Chris - {{ post.created_at | date:'M d, Y'}}</div>
-		<div id="detail-path">
+		<div class="post-tags">
 			{% if tags.exists %}
-			<p style="display: inline;">tags:</p>
+			<p>tags:</p>
 				{% for tag in tags %}
-					<a class="simple-link" href="{% url 'tag_detail' tag.slug %}">#{{ tag }}</a>
+					<form action="{% url 'tag_detail' tag.slug %}">
+						<button class="post-tag-button" type="submit">{{ tag }}</button>
+					</form>
+					<!-- <a class="simple-link" href="{% url 'tag_detail' tag.slug %}">#{{ tag }}</a> -->
 				{% endfor %}
 			{% endif %}
 		</div>
 	</div>
 	<div class="detail-body">
-
 		{% if post.header_img %}
 			<img class="detail-img" src="{{ post.header_img.url }}" alt="header-image">
 		{% endif %}
