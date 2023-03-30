@@ -1,6 +1,6 @@
 // Highlight Current Page link in the Navbar
 document.addEventListener('DOMContentLoaded', () => {
-const $navLinks = Array.prototype.slice.call(document.querySelectorAll('.navbar-link'), 0);
+const $navLinks = Array.prototype.slice.call(document.querySelectorAll('.navbar-item'), 0);
 
 if ($navLinks.length > 0) {
   $navLinks.forEach( el => {

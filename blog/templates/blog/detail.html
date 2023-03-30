@@ -25,7 +25,6 @@
 					<form action="{% url 'tag_detail' tag.slug %}">
 						<button class="post-tag-button" type="submit">{{ tag }}</button>
 					</form>
-					<!-- <a class="simple-link" href="{% url 'tag_detail' tag.slug %}">#{{ tag }}</a> -->
 				{% endfor %}
 			{% endif %}
 		</div>
