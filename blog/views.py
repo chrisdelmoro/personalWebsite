@@ -6,11 +6,18 @@ from .models import Post, Category, PostImages
 
 from taggit.models import Tag
 
+from django.core.paginator import Paginator
+
 def blog(request):
 	posts = Post.objects.filter(status=Post.ACTIVE)
+	paginator = Paginator(posts, 2)
+
+	page_number = request.GET.get('page')
+	page_obj = paginator.get_page(page_number)
+
 	category = Category.objects.all()
 	context = {
-		'posts':posts,
+		'page_obj':page_obj,
 		'categories':category,
 	}
 	return render(request, 'blog/blog.html', context)
@@ -29,26 +36,39 @@ def detail(request, category_slug, slug):
 def category(request, slug):
 	category = get_object_or_404(Category, slug=slug)
 	posts = category.posts.filter(status=Post.ACTIVE)
+	paginator = Paginator(posts, 2)
+
+	page_number = request.GET.get('page')
+	page_obj = paginator.get_page(page_number)
+
 	context = {
 		'category':category,
-		'posts':posts,
+		'page_obj':page_obj,
 	}
 	return render(request, 'blog/category.html', context)
 
 def tag(request, slug):
 	tag = get_object_or_404(Tag, slug=slug)
 	posts = Post.objects.filter(tags=tag, status=Post.ACTIVE)
+	paginator = Paginator(posts, 2)
+
+	page_number = request.GET.get('page')
+	page_obj = paginator.get_page(page_number)
 	context = {
 		'tag':tag,
-		'posts':posts,
+		'page_obj':page_obj,
 	}
 	return render(request, 'blog/tag.html', context)
 
 def search(request):
 	query = request.GET.get('query', '')
 	posts = Post.objects.filter(status=Post.ACTIVE).filter(Q(title__icontains=query) | Q(intro__icontains=query) | Q(body__icontains=query))
+	paginator = Paginator(posts, 2)
+
+	page_number = request.GET.get('page')
+	page_obj = paginator.get_page(page_number)
 	context = {
-		'posts':posts,
+		'page_obj':page_obj,
 		'query':query,
 	}
 	return render(request, 'blog/search.html', context)

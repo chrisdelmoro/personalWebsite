@@ -12,7 +12,7 @@ from django.views.decorators.http import require_GET
 def home(request):
 	posts = Post.objects.filter(status=Post.ACTIVE)
 	posts = posts[0:2]
-	context = {'posts':posts}
+	context = {'page_obj':posts}
 	return render(request, 'base/home.html', context)
 
 @require_GET

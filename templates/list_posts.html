@@ -1,7 +1,7 @@
 {% block list_posts %}
 <div id="blog-posts">
 
-	{% for post in posts %}
+	{% for post in page_obj %}
 
 	<div class="post">
 		{% if post.header_img %}
@@ -43,6 +43,22 @@
 	</div>
 
 	{% endfor %}
+
+	{% if page_obj.paginator.num_pages > 1 %}
+		<ul class="pagination pagination_style">
+			{% if page_obj.has_previous %}
+				<li><a class="prev" href="?page=1">&laquo;</a></li>
+			{% endif %}
+
+				{% for page_number in page_obj.paginator.page_range %}
+					<li><a href="?page={{ page_number }}" {% if page_number == page_obj.number %} class="active" {% endif %}>{{ page_number }}</a></li>
+				{% endfor %}
+
+			{% if page_obj.has_next %}
+				<li><a class="next" href="?page={{ page_obj.paginator.num_pages }}">&raquo;</a></li>
+			{% endif %}
+		</ul>
+	{% endif %}
 
 </div>
 {% endblock list_posts %}
