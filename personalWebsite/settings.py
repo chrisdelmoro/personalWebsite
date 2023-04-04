@@ -51,6 +51,7 @@ INSTALLED_APPS = [
     'contact.apps.ContactConfig',
     'ckeditor',
     'taggit',
+    'active_link',
 ]
 
 MIDDLEWARE = [

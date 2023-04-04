@@ -10,7 +10,7 @@
 	align-items: stretch;
 }
 
-.navbar-item, .navbar-item.current {
+.navbar-item, .navbar-item-current {
 	height: 100%;
 	display: flex;
 	align-items: center;
@@ -24,17 +24,11 @@
 	border-bottom-color 0.15s;
 }
 
-.navbar-item:hover {
-	color: #141a1b;
-	background-color: #16a085;
-	   border-bottom-color: white;
-}
-
-.navbar-item.current {
+.navbar-item-current {
 	border-bottom: 0.18rem solid #16a085;
 }
 
-.navbar-item.current:hover {
+.navbar-item:hover, .navbar-item-current:hover {
 	color: #141a1b;
 	background-color: #16a085;
 	   border-bottom-color: white;

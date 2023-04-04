@@ -1,7 +1,8 @@
+{% load active_link_tags %}
 <header class="header">
 	<nav class="navbar">
-		<a class="navbar-item" href="{% url 'home' %}">HOME</a>
-		<a class="navbar-item" href="{% url 'blog' %}">BLOG</a>
-		<a class="navbar-item" href="{% url 'contact' %}">CONTACT</a>
+		<a class="navbar-item {% active_link 'home' 'navbar-item-current' strict=True %}" href="{% url 'home' %}">HOME</a>
+		<a class="navbar-item {% active_link 'blog' 'navbar-item-current' %}" href="{% url 'blog' %}">BLOG</a>
+		<a class="navbar-item {% active_link 'contact' 'navbar-item-current' %}" href="{% url 'contact' %}">CONTACT</a>
 	</nav>
 </header>
