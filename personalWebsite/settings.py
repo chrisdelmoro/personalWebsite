@@ -11,7 +11,7 @@ https://docs.djangoproject.com/en/4.1/ref/settings/
 """
 
 from pathlib import Path
-from decouple import config
+from decouple import config # Used to hide sensitive information when viewed on public repos.
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -49,9 +49,9 @@ INSTALLED_APPS = [
     'base.apps.BaseConfig',
     'blog.apps.BlogConfig',
     'contact.apps.ContactConfig',
-    'ckeditor',
-    'taggit',
-    'active_link',
+    'ckeditor', # Django's rich text editor. Used on Admin's Panel
+    'taggit', # App that facilitates the usage of tags. Used on posts.
+    'active_link', # App that facilitates the implementation of active link on template. Used on the navbar.
 ]
 
 MIDDLEWARE = [

@@ -8,7 +8,7 @@ from taggit.models import Tag
 
 from django.core.paginator import Paginator
 
-def blog(request):
+def blog(request): # Blog's home page
 	posts = Post.objects.filter(status=Post.ACTIVE)
 	paginator = Paginator(posts, 2)
 
@@ -22,9 +22,9 @@ def blog(request):
 	}
 	return render(request, 'blog/blog.html', context)
 
-def detail(request, category_slug, slug):
+def detail(request, category_slug, slug): # Post's detail
 	post = get_object_or_404(Post, slug=slug, status=Post.ACTIVE)
-	images = post.images.all()
+	images = post.images.all() # Images from the BODY of the post.
 	tags = post.tags.all()
 	context = {
 		'post':post,
@@ -33,7 +33,7 @@ def detail(request, category_slug, slug):
 	}
 	return render(request, 'blog/detail.html', context)
 
-def category(request, slug):
+def category(request, slug): # Filter posts by category
 	category = get_object_or_404(Category, slug=slug)
 	posts = category.posts.filter(status=Post.ACTIVE)
 	paginator = Paginator(posts, 2)
@@ -47,7 +47,7 @@ def category(request, slug):
 	}
 	return render(request, 'blog/category.html', context)
 
-def tag(request, slug):
+def tag(request, slug): # Filter posts by tags
 	tag = get_object_or_404(Tag, slug=slug)
 	posts = Post.objects.filter(tags=tag, status=Post.ACTIVE)
 	paginator = Paginator(posts, 2)
@@ -60,7 +60,7 @@ def tag(request, slug):
 	}
 	return render(request, 'blog/tag.html', context)
 
-def search(request):
+def search(request): # Search posts for term inside its title, intro or body
 	query = request.GET.get('query', '')
 	posts = Post.objects.filter(status=Post.ACTIVE).filter(Q(title__icontains=query) | Q(intro__icontains=query) | Q(body__icontains=query))
 	paginator = Paginator(posts, 2)

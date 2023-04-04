@@ -5,7 +5,7 @@ from ckeditor.fields import RichTextField
 from taggit.managers import TaggableManager
 
 
-class Category(models.Model):
+class Category(models.Model): # One-to-Many relation with Post
 	title = models.CharField(max_length=255)
 	slug = models.SlugField()
 
@@ -20,7 +20,7 @@ class Category(models.Model):
 		return '/%s/' % self.slug
 
 
-def post_header_path(instance, filename):
+def post_header_path(instance, filename): # Used to specify save location of post header_img
 	return '{0}/{1}'.format(instance.category.title + '/' + instance.title, filename)
 
 class Post(models.Model):
@@ -33,13 +33,13 @@ class Post(models.Model):
 	)
 
 	category = models.ForeignKey(Category, related_name='posts', on_delete=models.CASCADE)
-	tags = TaggableManager()
+	tags = TaggableManager() # Implemented with the taggit app
 	title = models.CharField(max_length=255)
-	title_tag = models.CharField(max_length=255)
+	title_tag = models.CharField(max_length=255) # Text displayed on HTML <title> tag
 	slug = models.SlugField()
-	header_img = models.ImageField(blank=True, null=True, upload_to=post_header_path)
-	intro = RichTextField()
-	body = RichTextField()
+	header_img = models.ImageField(blank=True, null=True, upload_to=post_header_path) # Only the image displayed on the post header
+	intro = RichTextField() # Rich text field from ckeditor
+	body = RichTextField() # Rich text field from ckeditor
 	created_at = models.DateTimeField(auto_now_add = True)
 	status = models.CharField(max_length=10, choices=CHOISE_STATUS, default=ACTIVE)
 
@@ -53,10 +53,10 @@ class Post(models.Model):
 		return '/%s/%s/' % (self.category.slug, self.slug)
 
 
-def post_images_path(instance, filename):
+def post_images_path(instance, filename): # Used to specify save location of post body images
 	return '{0}/{1}'.format(instance.post.category.title + '/' + instance.post.title, filename)
 
-class PostImages(models.Model):
+class PostImages(models.Model): # Many-to-One relation with Post
 	post = models.ForeignKey(Post, related_name='images', on_delete=models.CASCADE)
 	image = models.ImageField(blank=True, null=True, upload_to=post_images_path)
 

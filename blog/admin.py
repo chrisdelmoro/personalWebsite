@@ -2,7 +2,7 @@ from django.contrib import admin
 
 from .models import Post, Category, PostImages
 
-class PostImagesAdmin(admin.StackedInline):
+class PostImagesAdmin(admin.StackedInline): # Used to add N images to post
 	model = PostImages
 
 class PostAdmin(admin.ModelAdmin):

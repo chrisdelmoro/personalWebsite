@@ -11,19 +11,19 @@ from django.views.decorators.http import require_GET
 
 def home(request):
 	posts = Post.objects.filter(status=Post.ACTIVE)
-	posts = posts[0:2]
+	posts = posts[0:2] # Only the two most recent posts are displayed
 	context = {'page_obj':posts}
 	return render(request, 'base/home.html', context)
 
 @require_GET
-@cache_control(max_age=60 * 60 * 24, immutable=True, public=True)  # one day
+@cache_control(max_age=60 * 60 * 24, immutable=True, public=True)  # One day
 def favicon_file(request: HttpRequest) -> HttpResponse:
     name = request.path.lstrip("/")
     file = (settings.BASE_DIR / "static/images" / name).open("rb")
     return FileResponse(file)
 
 @require_GET
-@cache_control(max_age=60 * 60 * 24, immutable=True, public=True)  # one day
+@cache_control(max_age=60 * 60 * 24, immutable=True, public=True)  # One day
 def web_manifest_files(request: HttpRequest) -> HttpResponse:
     name = request.path.lstrip("/")
     file = (settings.BASE_DIR / "static/manifest" / name).open("rb")
