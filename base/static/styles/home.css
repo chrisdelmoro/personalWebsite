@@ -5,8 +5,12 @@
 
 #intro-text {
 	align-self: center;
-	text-align: justify;
 	flex: 2;
+}
+
+#intro-text > p {
+	text-align: left;
+	margin-top: 1%;
 }
 
 #intro-photo-box {
