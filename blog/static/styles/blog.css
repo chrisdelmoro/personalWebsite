@@ -263,15 +263,15 @@
 }
 
 .pagination_style li:first-child a {
-	-moz-border-radius: 50px 0 0 50px;
-	-webkit-border-radius: 50px;
-	border-radius: 50px 0 0 50px;
+	-moz-border-radius: 100px 0 0 100px;
+	-webkit-border-radius: 100px;
+	border-radius: 100px 0 0 100px;
 }
 
 .pagination_style li:last-child a {
-	-moz-border-radius: 0 50px 50px 0;
+	-moz-border-radius: 0 100px 100px 0;
 	-webkit-border-radius: 0;
-	border-radius: 0 50px 50px 0;
+	border-radius: 0 100px 100px 0;
 }
 
 .pagination_style a {
@@ -340,6 +340,13 @@
 	.continue-button {
 		margin-top: 20px;
 	}
+
+	.pagination a {
+		font-size: 1rem;
+		padding: 0.4rem 0.9rem;
+		margin-left: -1px;
+		border: 1px solid transparent;
+	}
 }
 
 @media screen and (min-width: 3840px) {
@@ -380,6 +387,13 @@
 
 	.continue-button {
 		margin-top: 25px;
+	}
+
+	.pagination a {
+		font-size: 1.2rem;
+		padding: 0.5rem 1rem;
+		margin-left: -3px;
+		border: 1px solid transparent;
 	}
 }
 
@@ -422,6 +436,13 @@
 	.continue-button {
 		margin-top: 30px;
 	}
+
+	.pagination a {
+		font-size: 1.5rem;
+		padding: 0.7rem 1.3rem;
+		margin-left: -5px;
+		border: 1px solid transparent;
+	}
 }
 
 @media screen and (min-width: 7680px) {
@@ -462,5 +483,12 @@
 
 	.continue-button {
 		margin-top: 40px;
+	}
+
+	.pagination a {
+		font-size: 1.6rem;
+		padding: 0.9rem 1.5rem;
+		margin-left: -5px;
+		border: 5px solid transparent;
 	}
 }
