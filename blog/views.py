@@ -8,9 +8,12 @@ from taggit.models import Tag
 
 from django.core.paginator import Paginator
 
+
+POSTS_PER_PAGE = 5
+
 def blog(request): # Blog's home page
 	posts = Post.objects.filter(status=Post.ACTIVE)
-	paginator = Paginator(posts, 2)
+	paginator = Paginator(posts, POSTS_PER_PAGE)
 
 	page_number = request.GET.get('page')
 	page_obj = paginator.get_page(page_number)
@@ -36,7 +39,7 @@ def detail(request, category_slug, slug): # Post's detail
 def category(request, slug): # Filter posts by category
 	category = get_object_or_404(Category, slug=slug)
 	posts = category.posts.filter(status=Post.ACTIVE)
-	paginator = Paginator(posts, 2)
+	paginator = Paginator(posts, POSTS_PER_PAGE)
 
 	page_number = request.GET.get('page')
 	page_obj = paginator.get_page(page_number)
@@ -50,7 +53,7 @@ def category(request, slug): # Filter posts by category
 def tag(request, slug): # Filter posts by tags
 	tag = get_object_or_404(Tag, slug=slug)
 	posts = Post.objects.filter(tags=tag, status=Post.ACTIVE)
-	paginator = Paginator(posts, 2)
+	paginator = Paginator(posts, POSTS_PER_PAGE)
 
 	page_number = request.GET.get('page')
 	page_obj = paginator.get_page(page_number)
@@ -63,7 +66,7 @@ def tag(request, slug): # Filter posts by tags
 def search(request): # Search posts for term inside its title, intro or body
 	query = request.GET.get('query', '')
 	posts = Post.objects.filter(status=Post.ACTIVE).filter(Q(title__icontains=query) | Q(intro__icontains=query) | Q(body__icontains=query))
-	paginator = Paginator(posts, 2)
+	paginator = Paginator(posts, POSTS_PER_PAGE)
 
 	page_number = request.GET.get('page')
 	page_obj = paginator.get_page(page_number)
